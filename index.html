@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Ali — Portfolio</title>
+
+    <!-- Tailwind via CDN (سهل جدًا للنشر) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* تحسينات بسيطة */
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-[#0b0b0b] text-white">
+    <!-- Header -->
+    <header id="top" class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-6">
+        <!-- Tabs Desktop -->
+        <nav id="tabsDesktop" class="hidden md:flex gap-6 text-xs font-semibold tracking-wider"></nav>
+
+        <!-- Center mark -->
+        <div class="text-center text-[#b08a5b] font-bold tracking-widest text-sm sm:text-lg">
+          AHMED ALI
+        </div>
+
+        <!-- Social -->
+        <div class="flex items-center gap-4 text-white/60">
+          <a
+            href="https://www.linkedin.com/in/ahmed-ali-6aa339239/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            class="hover:text-white"
+          >
+            <!-- simple icon -->
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 24h4V7.98h-4V24ZM8.5 7.98h3.83v2.19h.05c.53-1 1.84-2.19 3.79-2.19 4.05 0 4.8 2.67 4.8 6.14V24h-4v-8.87c0-2.12-.04-4.85-2.95-4.85-2.95 0-3.4 2.3-3.4 4.7V24h-4V7.98Z"/></svg>
+          </a>
+          <a
+            href="https://www.facebook.com/ahmed.hero.7773631"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            class="hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.691V11.01h3.129V8.309c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0Z"/></svg>
+          </a>
+          <a
+            href="https://www.instagram.com/ahmed.hero18/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            class="hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm10.25 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tabs Mobile -->
+      <div class="md:hidden mx-auto max-w-7xl px-6 pb-4">
+        <div id="tabsMobile" class="flex gap-2 overflow-x-auto scrollbar-hide"></div>
+      </div>
+    </header>
+
+    <!-- Grid -->
+    <main class="mx-auto max-w-7xl px-6 py-10">
+      <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <div class="mt-14 flex justify-center">
+        <a
+          href="#top"
+          class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+        >
+          <span class="inline-block">↑</span> Back to Top
+        </a>
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modalRoot" class="hidden">
+      <div class="fixed inset-0 z-[999]">
+        <!-- Backdrop -->
+        <div id="modalBackdrop" class="absolute inset-0 bg-black/75"></div>
+
+        <!-- Dialog -->
+        <div
+          class="absolute left-1/2 top-1/2 w-[94vw] max-w-5xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-[#0b0b0b] shadow-2xl"
+        >
+          <div class="flex items-center justify-between border-b border-white/10 px-4 py-3">
+            <div class="min-w-0">
+              <div id="modalTitle" class="text-sm font-semibold text-white">Vimeo</div>
+              <div class="text-xs text-white/55">
+                If it doesn’t load here, Vimeo blocks framing — use the button below.
+              </div>
+            </div>
+            <button
+              id="modalClose"
+              type="button"
+              class="rounded-lg border border-white/10 bg-white/5 p-2 hover:bg-white/10"
+              aria-label="Close"
+            >
+              <!-- X icon -->
+              <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-white/75">
+                <path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.29 19.71 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.29-6.3z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="relative aspect-video w-full bg-black">
+            <iframe
+              id="modalFrame"
+              title="vimeo"
+              src=""
+              class="absolute inset-0 h-full w-full"
+              frameborder="0"
+            ></iframe>
+
+            <div class="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2">
+              <a
+                id="modalOpenVimeo"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-[#0b0b0b] hover:bg-white/90"
+              >
+                Open on Vimeo
+              </a>
+              <div class="text-xs text-white/50">Press ESC to close</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "portfolio_active_tab_v1";
+
+      const TABS = [
+        "All Projects",
+        "Creative Projects",
+        "Promos",
+        "Commercial & Marketing",
+        "Medical",
+        "Education",
+      ];
+
+      const VIDEOS = [
+        // Creative Projects
+        { id: 1169651306, category: "Creative Projects" },
+        { id: 1169649072, category: "Creative Projects" },
+        { id: 1169658907, category: "Creative Projects" },
+        { id: 1169642766, category: "Creative Projects" },
+        { id: 1169663228, category: "Creative Projects" },
+        { id: 1169661452, category: "Creative Projects" },
+        { id: 1169646355, category: "Creative Projects" },
+        { id: 1169653209, category: "Creative Projects" },
+
+        // Promos
+        { id: 1169685150, category: "Promos" },
+        { id: 1169682315, category: "Promos" },
+
+        // Commercial & Marketing
+        { id: 1170003902, category: "Commercial & Marketing" },
+
+        // Medical
+        { id: 1169679794, category: "Medical" },
+        { id: 1169681347, category: "Medical" },
+
+        // Education
+        { id: 1169678868, category: "Education" },
+        { id: 1169677659, category: "Education" },
+        { id: 1169675728, category: "Education" },
+        { id: 1169673385, category: "Education" },
+        { id: 1169672422, category: "Education" },
+        { id: 1169669303, category: "Education" },
+        { id: 1169666057, category: "Education" },
+      ];
+
+      const vimeoPage = (id) => `https://vimeo.com/${id}`;
+      const vimeoThumb = (id) => `https://vumbnail.com/${id}.jpg`;
+
+      let activeTab = loadTab();
+      let openId = null;
+
+      const tabsDesktop = document.getElementById("tabsDesktop");
+      const tabsMobile = document.getElementById("tabsMobile");
+      const grid = document.getElementById("grid");
+
+      const modalRoot = document.getElementById("modalRoot");
+      const modalBackdrop = document.getElementById("modalBackdrop");
+      const modalClose = document.getElementById("modalClose");
+      const modalFrame = document.getElementById("modalFrame");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalOpenVimeo = document.getElementById("modalOpenVimeo");
+
+      function loadTab() {
+        try {
+          const v = localStorage.getItem(STORAGE_KEY);
+          return TABS.includes(v) ? v : "All Projects";
+        } catch {
+          return "All Projects";
+        }
+      }
+
+      function saveTab(tab) {
+        try { localStorage.setItem(STORAGE_KEY, tab); } catch {}
+      }
+
+      function setActive(tab) {
+        activeTab = tab;
+        saveTab(tab);
+        renderTabs();
+        renderGrid();
+      }
+
+      function filteredVideos() {
+        if (activeTab === "All Projects") return VIDEOS;
+        return VIDEOS.filter((v) => v.category === activeTab);
+      }
+
+      function renderTabs() {
+        // Desktop
+        tabsDesktop.innerHTML = "";
+        TABS.forEach((tab) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.textContent = tab.toUpperCase();
+          btn.className =
+            "transition " +
+            (tab === activeTab ? "text-[#b08a5b]" : "text-white/60 hover:text-white");
+          btn.onclick = () => setActive(tab);
+          tabsDesktop.appendChild(btn);
+        });
+
+        // Mobile
+        tabsMobile.innerHTML = "";
+        TABS.forEach((tab) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.textContent = tab;
+          btn.className =
+            "whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold " +
+            (tab === activeTab ? "text-[#b08a5b]" : "text-white/70");
+          btn.onclick = () => setActive(tab);
+          tabsMobile.appendChild(btn);
+        });
+      }
+
+      function renderGrid() {
+        grid.innerHTML = "";
+
+        filteredVideos().forEach((v) => {
+          const card = document.createElement("button");
+          card.type = "button";
+          card.className =
+            "group relative aspect-video overflow-hidden border border-white/10 bg-black/40 text-left";
+
+          // thumb
+          const img = document.createElement("img");
+          img.src = vimeoThumb(v.id);
+          img.alt = `Vimeo ${v.id}`;
+          img.loading = "lazy";
+          img.className =
+            "absolute inset-0 h-full w-full object-cover opacity-85 transition duration-300 group-hover:opacity-100";
+          card.appendChild(img);
+
+          // overlay
+          const overlay = document.createElement("div");
+          overlay.className =
+            "absolute inset-0 bg-black/35 opacity-70 transition group-hover:opacity-80";
+          card.appendChild(overlay);
+
+          // play
+          const playWrap = document.createElement("div");
+          playWrap.className = "absolute inset-0 grid place-items-center";
+          playWrap.innerHTML = `
+            <div class="grid h-16 w-16 place-items-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur-sm">
+              <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current text-white/85">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </div>
+          `;
+          card.appendChild(playWrap);
+
+          // category tag
+          const tag = document.createElement("div");
+          tag.className = "absolute bottom-3 left-3";
+          tag.innerHTML = `
+            <span class="rounded-full border border-white/10 bg-black/40 px-3 py-1 text-xs font-semibold text-white/80">
+              ${v.category}
+            </span>
+          `;
+          card.appendChild(tag);
+
+          // id
+          const idTag = document.createElement("div");
+          idTag.className = "absolute bottom-3 right-3 text-[11px] text-white/55";
+          idTag.textContent = `#${v.id}`;
+          card.appendChild(idTag);
+
+          card.onclick = () => openModal(v.id);
+          grid.appendChild(card);
+        });
+      }
+
+      function openModal(id) {
+        openId = id;
+
+        const url = vimeoPage(id);
+        modalTitle.textContent = `Vimeo #${id}`;
+        modalFrame.src = url;
+        modalOpenVimeo.href = url;
+
+        modalRoot.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        openId = null;
+        modalFrame.src = ""; // stop loading
+        modalRoot.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      modalBackdrop.addEventListener("click", closeModal);
+      modalClose.addEventListener("click", closeModal);
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modalRoot.classList.contains("hidden")) closeModal();
+      });
+
+      // init
+      renderTabs();
+      renderGrid();
+    </script>
+  </body>
+</html>
